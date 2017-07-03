@@ -1,0 +1,18 @@
+---
+# Test default params
+- hosts: all
+  become: true
+  roles:
+    - michalschott.packer
+
+# Test all params
+- hosts: all
+  become: true
+  roles:
+    - michalschott.packer
+  vars:
+    packer_version: 1.0.2
+    packer_checksum: "sha256:13774108d10e26b1b26cc5a0a28e26c934b4e2c66bc3e6c33ea04c2f248aad7f"
+    packer_path: /usr/bin
+    packer_owner: nobody
+    packer_group: nogroup

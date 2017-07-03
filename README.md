@@ -1,6 +1,8 @@
 Ansible Role: Packer
 =========
 
+[![Build Status](https://travis-ci.org/michalschott/ansible-role-packer.svg?branch=master)](https://travis-ci.org/michalschott/ansible-role-packer)
+
 Installs Packer on Linux amd64.
 
 This role downloads packer from Hashicorp website, checks checksum and installs it in your system.
