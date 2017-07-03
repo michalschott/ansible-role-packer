@@ -1,0 +1,21 @@
+---
+- name: PACKER | download arichve
+  get_url:
+    url: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
+    dest: /tmp/packer_{{ packer_version }}.zip
+    mode: 0600
+    checksum: "{{ packer_checksum }}"
+  tags:
+    - packer
+
+- name: PACKER | unarchive zip
+  unarchive:
+    src: /tmp/packer_{{ packer_version }}.zip
+    dest: "{{ packer_path }}"
+    owner: "{{ packer_owner }}"
+    group: "{{ packer_group }}"
+    remote_src: True
+    mode: 0755
+    creates: "{{ packer_path }}/packer"
+  tags:
+    - packer
